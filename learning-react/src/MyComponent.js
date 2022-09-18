@@ -1,8 +1,5 @@
 import React from 'react';
-const MyComponent = (props) =>{
-    
-    //ES6의 비구조화 할당 문법을 사용하여 내부 값을 바로 추출
-    const {name, children} = props;
+const MyComponent = ({name, children}) =>{//ES6의 비구조화 할당 문법을 사용하여 내부 값을 바로 추출
 
     return (
         <>
