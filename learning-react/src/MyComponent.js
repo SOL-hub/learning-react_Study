@@ -1,5 +1,6 @@
 import React from 'react';
-const MyComponent = ({name, children}) =>{//ES6의 비구조화 할당 문법을 사용하여 내부 값을 바로 추출
+import propsTypes from 'prop-types';
+const MyComponent = ({name, children}) =>{
 
     return (
         <>
@@ -9,8 +10,13 @@ const MyComponent = ({name, children}) =>{//ES6의 비구조화 할당 문법을
     )
 };
 
+
 MyComponent.defaultProps = {
     name:'name'
+};
+
+MyComponent.propsTypes = {
+    name : propsTypes.string //값은 무조건 문자열형태로 전달해야한다고 설정
 };
 
 export default MyComponent;
