@@ -4,6 +4,7 @@ import MyComponent from './MyComponent';
 function App() {
 
   const name = '솔';
+  
 
   return (
     <div className="App">
