@@ -2,15 +2,27 @@ import React, {useState} from 'react';
 
 const EventPractice = () => {
 
-    const [username, setUsername] = useState('');
-    const [message, setMessage] = useState('');
-    const onChangeUsername =  e => setUsername(e.target.value);
-    const onChangeMessage = e => setMessage(e.target.value)
+    const [form, setForm] = useState({
+        username:'',
+        message:''
+    });
+
+    const [username, message] = form;
+
+    const onChange = e => {
+        const nextForm = {
+            ...form, //기존의 form내용을 이자리에 복사한 뒤 
+            [e.target.name]: e.target.value // 원하는 값을 덮어 씌우기
+        };
+        setForm(nextForm);
+    };
 
     const onClick = ()=>{
         alert(username + ':' + message);
-        setUsername('');
-        setMessage('');
+        setForm({
+            username:'',
+            message:''
+        });
     };
 
     const onKeyPress = e => {
@@ -22,8 +34,8 @@ const EventPractice = () => {
         return (
             <div>
                 <p>이벤트 연습</p>
-                <input name="username" placeholder='아무거나 입력하라' value={username} onChange={onChangeUsername} />
-                <input name="username" placeholder='아무거나 입력하라' value={message} onChange={onChangeMessage} onKeyPress={onKeyPress} />
+                <input name="username" placeholder='사용자명' value={username} onChange={onChange} />
+                <input name="message" placeholder='아무거나 입력하라' value={message} onChange={onChange} onKeyPress={onKeyPress} />
 
                 <button onClick={onClick}>확인</button>
             </div>
