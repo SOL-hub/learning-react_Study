@@ -1,7 +1,7 @@
 import './App.css';
 import MyComponent from './MyComponent';
 import Say from './Say';
-import EventPractice from './EventPractice';
+import ValidationSample from './ValidationSample';
 
 function App() {
 
@@ -11,9 +11,9 @@ function App() {
   return (
     <div className="App">
       <p>똘이의 리액트</p>
-      <MyComponent name={name} favoriteNumber={2}>사이에 껴있는</MyComponent>
+      <MyComponent name={name} favoriteNumber={2} ref={(ref) => this.myComponent=ref}>사이에 껴있는</MyComponent>
       <Say />
-      <EventPractice></EventPractice>
+      <ValidationSample/>
     </div>
   );
 }
