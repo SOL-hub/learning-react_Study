@@ -2,7 +2,7 @@ import { MdAddCircleOutline } from 'react-icons/md';
 import React, { useState, useCallback } from 'react';
 import './TodoInsert.css';
 
-const TodoInsert = ({ onInsert, }) => {
+const TodoInsert = ({ onInsert }) => {
   const [value, setValue] = useState('');
 
   const onChange = useCallback((e) => {
