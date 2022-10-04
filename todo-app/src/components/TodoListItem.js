@@ -6,7 +6,7 @@ import {
 import './TodoListItem.css';
 import cn from 'classnames';
 
-const TodoListItem = ({ todo, onRemove}) => {
+const TodoListItem = ({ todo, onRemove }) => {
   const { id, text, checked } = todo;
 
   return (
