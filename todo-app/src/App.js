@@ -4,15 +4,16 @@ import TodoTemplate from './components/TodoTemplate';
 import TodoInsert from './components/TodoInsert';
 import TodoList from './components/TodoList';
 
-function App() {
-  const [todos, setTodos] = useState([
-    { id: 1, text: '리액트 투두리스트만들기', checked: true },
-    { id: 2, text: '갑자기 땡기는 국화빵 사먹기', checked: false },
-    { id: 3, text: '번개 약속 나가기', checked: false },
-  ]);
+function createBulkTodos() {
+  const array = [];
+  for (let i = 1; i <= 2500; i++) {
+    array.push({ id: i, text: `할 일${i}`, checked: false });
+  }
+  return array;
+}
 
-  //고윳값으로 사용될 id,
-  //ref를 사용하여 변수 담기
+const App = () => {
+  const [todos, setTodos] = useState(createBulkTodos);
 
   const onRemove = useCallback(
     (id) => {
@@ -21,7 +22,7 @@ function App() {
     [todos],
   );
 
-  const nextId = useRef(4);
+  const nextId = useRef(2501);
 
   const onInsert = useCallback(
     (text) => {
@@ -53,6 +54,6 @@ function App() {
       <TodoList todos={todos} onRemove={onRemove} onToggle={onToggle} />
     </TodoTemplate>
   );
-}
+};
 
 export default App;
