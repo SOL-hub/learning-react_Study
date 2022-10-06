@@ -1,6 +1,6 @@
 import { Link, Outlet } from "readt-router-dom";
 
-const Article = () => {
+const Articles = () => {
   return (
     <Outlet>
       <ul>
@@ -18,4 +18,4 @@ const Article = () => {
   );
 };
 
-export default Article;
+export default Articles;
