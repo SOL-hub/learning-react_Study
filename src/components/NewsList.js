@@ -34,3 +34,5 @@ const NewsList = () =>{
         </NewsListBlock>
     )
 }
+
+export default NewsList;
