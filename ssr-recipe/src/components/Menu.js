@@ -8,6 +8,10 @@ const Menu = () =>{
             <li>
                 <Link to="/blue">blue</Link>
             </li>
+
+            <li>
+                <Link to="/users">Users</Link>
+            </li>
         </ul>
     );
 };
