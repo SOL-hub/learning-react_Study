@@ -1,8 +1,10 @@
-import { useState, Suspense } from 'react';
+import { useState } from 'react';
 import './App.css';
-import React from 'react';
+import loadable from '@loadable/component';
 
-const SplitMe = React.lazy(() => import('./SplitMe'));
+const SplitMe = loadable(() => import('./SplitMe'), {
+  fallback: <div>loading...</div>,
+});
 
 function App() {
   const [visible, setVisible] = useState(false);
@@ -10,14 +12,18 @@ function App() {
     setVisible(true);
   };
 
+  const onMouseOver = () => {
+    SplitMe.preload();
+  };
+
   return (
     <div className="App">
       <header className="App-header">
         <p>하이</p>
-        <p onClick={onClick}>하이 리액트</p>
-        <Suspense fallback={<div>loading...</div>}>
+        <p onClick={onClick} onMouseOver={onMouseOver}>
+          안녕 리액트
           {visible && <SplitMe />}
-        </Suspense>
+        </p>
       </header>
     </div>
   );
