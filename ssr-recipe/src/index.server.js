@@ -5,6 +5,10 @@ import { StaticRouter } from "react-router-dom";
 import App from "./App";
 import path from "path";
 import fs from "fs";
+import {legacy_createStore as createStore, applyMiddleware} from 'redux';
+import {Provider} from 'react-redux';
+import thunk from 'redux-thunk';
+import rootReducer from './modules';
 
 //assert-manifest.json에서 파일 경로들을 조회
 const manifest = JSON.parse(
