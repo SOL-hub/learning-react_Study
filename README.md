@@ -2,9 +2,9 @@
 리액트를 다루는 기술_책 스터디
 
 <div align="center">
-  <h1>
+  <h2>
     💘 <strong>리액트를 다루는 기술_책 스터디</strong>
-  </h1>
+  </h2>
 </div>
 
 ## 📓 Study Started
