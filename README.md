@@ -6,7 +6,7 @@
     💘 <strong>리액트를 다루는 기술_책 스터디</strong>
   </h2>
 </div>
-
+<br/>
 ## 📓 Study Started
 <strong>1일차</strong> :  1장 리액트의 시작, 2장 JSX
 
